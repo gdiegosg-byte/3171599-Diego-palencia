@@ -1,0 +1,73 @@
+<svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo -->
+  <rect width="800" height="300" fill="#0a0e27"/>
+  
+  <!-- Título -->
+  <text x="400" y="30" font-size="24" font-weight="bold" text-anchor="middle" fill="#e0e0e0" font-family="Inter, sans-serif">
+    Flujo de Compilación TypeScript
+  </text>
+  
+  <!-- Caja 1: TypeScript -->
+  <rect x="50" y="80" width="140" height="120" fill="#3178c6" stroke="#2d66a8" stroke-width="2" rx="8"/>
+  <text x="120" y="130" font-size="18" font-weight="bold" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif">
+    TypeScript
+  </text>
+  <text x="120" y="155" font-size="12" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif">
+    .ts / .tsx
+  </text>
+  <text x="120" y="175" font-size="11" text-anchor="middle" fill="#e0e0e0" font-family="Inter, sans-serif">
+    Tipos estáticos
+  </text>
+  
+  <!-- Flecha 1 -->
+  <g>
+    <line x1="190" y1="140" x2="280" y2="140" stroke="#61dafb" stroke-width="3"/>
+    <polygon points="280,140 270,135 275,140 270,145" fill="#61dafb"/>
+  </g>
+  
+  <!-- Etiqueta flecha 1 -->
+  <text x="235" y="120" font-size="12" text-anchor="middle" fill="#61dafb" font-family="Inter, sans-serif" font-weight="bold">
+    Compilador (tsc)
+  </text>
+  
+  <!-- Caja 2: JavaScript -->
+  <rect x="380" y="80" width="140" height="120" fill="#f7df1e" stroke="#ccb10a" stroke-width="2" rx="8"/>
+  <text x="450" y="130" font-size="18" font-weight="bold" text-anchor="middle" fill="#000000" font-family="Inter, sans-serif">
+    JavaScript
+  </text>
+  <text x="450" y="155" font-size="12" text-anchor="middle" fill="#000000" font-family="Inter, sans-serif">
+    .js
+  </text>
+  <text x="450" y="175" font-size="11" text-anchor="middle" fill="#333333" font-family="Inter, sans-serif">
+    Sin tipos
+  </text>
+  
+  <!-- Flecha 2 -->
+  <g>
+    <line x1="520" y1="140" x2="610" y2="140" stroke="#61dafb" stroke-width="3"/>
+    <polygon points="610,140 600,135 605,140 600,145" fill="#61dafb"/>
+  </g>
+  
+  <!-- Etiqueta flecha 2 -->
+  <text x="565" y="120" font-size="12" text-anchor="middle" fill="#61dafb" font-family="Inter, sans-serif" font-weight="bold">
+    Runtime
+  </text>
+  
+  <!-- Caja 3: Navegador/Node -->
+  <rect x="710" y="80" width="40" height="120" fill="#61dafb" stroke="#4da8d0" stroke-width="2" rx="8"/>
+  <circle cx="730" cy="130" r="8" fill="#ffffff"/>
+  <circle cx="730" cy="145" r="8" fill="#ffffff"/>
+  <circle cx="730" cy="160" r="8" fill="#ffffff"/>
+  
+  <!-- Etiqueta final -->
+  <text x="730" y="225" font-size="12" text-anchor="middle" fill="#61dafb" font-family="Inter, sans-serif" font-weight="bold">
+    Navegador
+  </text>
+  
+  <!-- Información adicional -->
+  <rect x="50" y="240" width="700" height="45" fill="#1a2847" stroke="#3178c6" stroke-width="1" rx="4"/>
+  <text x="60" y="260" font-size="11" fill="#e0e0e0" font-family="Inter, sans-serif">
+    <tspan x="60">QUÉ: TypeScript agrega tipos que JavaScript no tiene natively</tspan>
+    <tspan x="60" dy="15">IMPACTO: El compilador verifica tipos antes de generar JS, evitando bugs en runtime</tspan>
+  </text>
+</svg>

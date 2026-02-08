@@ -1,0 +1,93 @@
+<svg viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo -->
+  <rect width="900" height="500" fill="#0a0e27"/>
+  
+  <!-- Título -->
+  <text x="450" y="35" font-size="26" font-weight="bold" text-anchor="middle" fill="#e0e0e0" font-family="Inter, sans-serif">
+    Generics: Tipos Reutilizables
+  </text>
+  
+  <!-- Línea separadora -->
+  <line x1="50" y1="55" x2="850" y2="55" stroke="#3178c6" stroke-width="2"/>
+  
+  <!-- Explicación qué son generics -->
+  <rect x="50" y="75" width="800" height="65" fill="#1a2847" stroke="#3178c6" stroke-width="2" rx="8"/>
+  <text x="70" y="100" font-size="12" font-weight="bold" fill="#61dafb" font-family="Inter, sans-serif">
+    QUÉ: Un generic es un "placeholder" (T, U, K) para cualquier tipo
+  </text>
+  <text x="70" y="125" font-size="12" fill="#e0e0e0" font-family="Inter, sans-serif">
+    PARA: Crear funciones y tipos que funcionen con CUALQUIER tipo manteniendo seguridad de tipos
+  </text>
+  
+  <!-- Ejemplo 1: Identity -->
+  <g>
+    <rect x="50" y="165" width="350" height="150" fill="#1a2847" stroke="#3178c6" stroke-width="1" rx="8"/>
+    
+    <text x="225" y="185" font-size="13" font-weight="bold" text-anchor="middle" fill="#61dafb" font-family="Inter, sans-serif">
+      Función Genérica Básica
+    </text>
+    
+    <rect x="65" y="200" width="320" height="105" fill="#0f1529" stroke="#2d66a8" stroke-width="1" rx="4"/>
+    <text x="75" y="220" font-size="11" fill="#61dafb" font-family="monospace" font-weight="bold">
+      const identity =
+    </text>
+    <text x="75" y="238" font-size="11" fill="#61dafb" font-family="monospace" font-weight="bold">
+      &lt;T&gt;(value: T): T =&gt;
+    </text>
+    <text x="85" y="256" font-size="11" fill="#e0e0e0" font-family="monospace">
+      value;
+    </text>
+    <text x="75" y="280" font-size="10" fill="#a0a0a0" font-family="monospace" font-style="italic">
+      // T puede ser string,
+    </text>
+    <text x="75" y="295" font-size="10" fill="#a0a0a0" font-family="monospace" font-style="italic">
+      // number, o cualquier tipo
+    </text>
+  </g>
+  
+  <!-- Ejemplo 2: Array genérico -->
+  <g>
+    <rect x="450" y="165" width="350" height="150" fill="#1a2847" stroke="#3178c6" stroke-width="1" rx="8"/>
+    
+    <text x="625" y="185" font-size="13" font-weight="bold" text-anchor="middle" fill="#61dafb" font-family="Inter, sans-serif">
+      Generics en Arrays
+    </text>
+    
+    <rect x="465" y="200" width="320" height="105" fill="#0f1529" stroke="#2d66a8" stroke-width="1" rx="4"/>
+    <text x="475" y="220" font-size="11" fill="#61dafb" font-family="monospace" font-weight="bold">
+      const mapArray =
+    </text>
+    <text x="475" y="238" font-size="11" fill="#61dafb" font-family="monospace" font-weight="bold">
+      &lt;T, U&gt;(arr: T[], fn:
+    </text>
+    <text x="485" y="256" font-size="11" fill="#e0e0e0" font-family="monospace">
+      (x: T) =&gt; U
+    </text>
+    <text x="475" y="274" font-size="11" fill="#61dafb" font-family="monospace" font-weight="bold">
+      ): U[] =&gt; arr.map(fn);
+    </text>
+    <text x="475" y="298" font-size="10" fill="#a0a0a0" font-family="monospace" font-style="italic">
+      // Convierte T[] en U[]
+    </text>
+  </g>
+  
+  <!-- Ejemplo 3: ApiResponse -->
+  <g>
+    <rect x="50" y="340" width="800" height="130" fill="#1a2847" stroke="#3178c6" stroke-width="1" rx="8"/>
+    
+    <text x="450" y="360" font-size="13" font-weight="bold" text-anchor="middle" fill="#61dafb" font-family="Inter, sans-serif">
+      Tipo Genérico: ApiResponse (usado en React + API calls)
+    </text>
+    
+    <rect x="65" y="375" width="770" height="85" fill="#0f1529" stroke="#2d66a8" stroke-width="1" rx="4"/>
+    <text x="75" y="395" font-size="11" fill="#61dafb" font-family="monospace" font-weight="bold">
+      type ApiResponse&lt;T&gt; = { data: T; error: string | null };
+    </text>
+    <text x="75" y="420" font-size="10" fill="#a0a0a0" font-family="monospace" font-style="italic">
+      // Uso: ApiResponse&lt;User&gt; → { data: User; error: ... }
+    </text>
+    <text x="75" y="440" font-size="10" fill="#a0a0a0" font-family="monospace" font-style="italic">
+      // Uso: ApiResponse&lt;Post[]&gt; → { data: Post[]; error: ... }
+    </text>
+  </g>
+</svg>

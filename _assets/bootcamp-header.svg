@@ -1,0 +1,19 @@
+<svg width="1200" height="360" viewBox="0 0 1200 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="360" rx="32" fill="#0B1020"/>
+  <rect x="40" y="40" width="1120" height="280" rx="24" fill="#121A33"/>
+  <rect x="80" y="90" width="320" height="12" rx="6" fill="#61DAFB"/>
+  <rect x="80" y="120" width="220" height="12" rx="6" fill="#3178C6"/>
+  <rect x="80" y="150" width="260" height="12" rx="6" fill="#61DAFB"/>
+
+  <circle cx="980" cy="160" r="70" fill="#0F1730"/>
+  <circle cx="980" cy="160" r="54" stroke="#61DAFB" stroke-width="4" fill="none"/>
+  <circle cx="980" cy="160" r="34" stroke="#3178C6" stroke-width="4" fill="none"/>
+  <circle cx="980" cy="160" r="12" fill="#61DAFB"/>
+
+  <text x="80" y="230" font-family="Inter, Roboto, Open Sans, system-ui, sans-serif" font-size="40" font-weight="700" fill="#E6ECFF">
+    Bootcamp React + TypeScript
+  </text>
+  <text x="80" y="270" font-family="Inter, Roboto, Open Sans, system-ui, sans-serif" font-size="20" font-weight="500" fill="#A9B3D6">
+    20 semanas • 160 horas • Docker First
+  </text>
+</svg>
