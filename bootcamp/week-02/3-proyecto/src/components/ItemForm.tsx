@@ -1,9 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Item } from '../types';
 
-/**
- * PROPS: ItemForm
- */
 interface ItemFormProps {
   onAdd: (item: Omit<Item, 'id'>) => void;
   onUpdate: (id: number, updates: Partial<Item>) => void;
@@ -11,211 +8,183 @@ interface ItemFormProps {
   onCancelEdit: () => void;
 }
 
-/**
- * COMPONENTE: ItemForm
- *
- * Formulario para agregar o editar elementos.
- * Se adapta automáticamente según si hay un elemento siendo editado.
- */
 const ItemForm: React.FC<ItemFormProps> = ({
   onAdd,
   onUpdate,
   editingItem,
   onCancelEdit,
 }) => {
-  // ============================================
-  // ESTADO DEL FORMULARIO
-  // ============================================
 
-  // TODO: Define el estado inicial del formulario según tu dominio
-  // Ejemplo para referencia (ADAPTAR):
-  const initialState = {
+  // Estado inicial del formulario
+  const initialState: Omit<Item, 'id'> = {
     name: '',
-    // TODO: Agregar más campos según tu dominio
-    // Ejemplos:
-    // - Biblioteca: author: '', isbn: '', available: true, category: 'fiction'
-    // - Farmacia: price: 0, stock: 0, requiresPrescription: false, category: 'analgésico'
-    // - Gimnasio: email: '', plan: 'básico', startDate: '', active: true
+    client: '',
+    date: '',
+    status: 'Pendiente',
+    price: 0,
   };
 
   const [formData, setFormData] = useState(initialState);
 
-  // ============================================
-  // EFECTO: PRE-LLENAR FORMULARIO AL EDITAR
-  // ============================================
-
+  // Pre-llenar al editar
   useEffect(() => {
     if (editingItem) {
-      // TODO: Pre-llenar el formulario con los datos del elemento a editar
-      // Tip: Extrae solo los campos necesarios (sin id)
       const { id, ...rest } = editingItem;
       setFormData(rest);
     } else {
-      // Si no hay elemento editando, limpiar formulario
       setFormData(initialState);
     }
   }, [editingItem]);
 
-  // ============================================
+  // =========================
   // HANDLERS
-  // ============================================
+  // =========================
 
-  /**
-   * Manejar cambios en inputs de texto
-   */
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
 
-    // TODO: Actualizar el estado del formulario
-    // Tip: Usa spread operator para mantener los demás campos
-    setFormData({ ...formData, [name]: value });
+    setFormData({
+      ...formData,
+      [name]: name === 'price' ? Number(value) : value,
+    });
   };
 
-  /**
-   * Manejar cambios en selects
-   */
   const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  /**
-   * Manejar cambios en checkboxes
-   */
-  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, checked } = e.target;
-    setFormData({ ...formData, [name]: checked });
-  };
+  // =========================
+  // VALIDACIÓN
+  // =========================
 
-  /**
-   * Validar datos del formulario
-   */
   const validate = (): boolean => {
-    // TODO: Implementar validación según tu dominio
-    // Ejemplos:
-    // - Campos requeridos no vacíos
-    // - Números positivos
-    // - Emails válidos
-    // - Fechas válidas
-
     if (!formData.name.trim()) {
-      alert('El nombre es requerido');
+      alert('El servicio es requerido');
       return false;
     }
 
-    // TODO: Agregar más validaciones específicas de tu dominio
+    if (!formData.client.trim()) {
+      alert('El cliente es requerido');
+      return false;
+    }
+
+    if (!formData.date) {
+      alert('La fecha es requerida');
+      return false;
+    }
+
+    if (formData.price <= 0) {
+      alert('El precio debe ser mayor a 0');
+      return false;
+    }
 
     return true;
   };
 
-  /**
-   * Manejar submit del formulario
-   */
+  // =========================
+  // SUBMIT
+  // =========================
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // TODO: Validar datos
     if (!validate()) return;
 
-    // TODO: Agregar o actualizar según corresponda
     if (editingItem) {
-      // Modo edición: actualizar
       onUpdate(editingItem.id, formData);
       onCancelEdit();
     } else {
-      // Modo agregar: crear nuevo
       onAdd(formData);
     }
 
-    // TODO: Limpiar formulario
     setFormData(initialState);
   };
 
-  // ============================================
+  // =========================
   // RENDER
-  // ============================================
+  // =========================
 
   return (
     <div className="form-container">
-      <h2>{editingItem ? '✏️ Editar Elemento' : '➕ Agregar Elemento'}</h2>
+      <h2>{editingItem ? '✏️ Editar Servicio' : '➕ Agregar Servicio'}</h2>
 
-      <form
-        onSubmit={handleSubmit}
-        className="item-form">
-        {/* Campo: Nombre */}
+      <form onSubmit={handleSubmit} className="item-form">
+
+        {/* Servicio */}
         <div className="form-group">
-          <label htmlFor="name">Nombre *</label>
+          <label htmlFor="name">Servicio *</label>
           <input
             type="text"
             id="name"
             name="name"
             value={formData.name}
             onChange={handleChange}
-            placeholder="Ingresa el nombre"
+            placeholder="Ej: Limpieza profunda"
             required
           />
         </div>
 
-        {/* TODO: Agregar más campos según tu dominio */}
-        {/* Ejemplos:
-          
-          Biblioteca:
-          <div className="form-group">
-            <label htmlFor="author">Autor *</label>
-            <input
-              type="text"
-              id="author"
-              name="author"
-              value={formData.author}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          
-          <div className="form-group">
-            <label htmlFor="isbn">ISBN *</label>
-            <input
-              type="text"
-              id="isbn"
-              name="isbn"
-              value={formData.isbn}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          
-          <div className="form-group">
-            <label htmlFor="category">Categoría</label>
-            <select
-              id="category"
-              name="category"
-              value={formData.category}
-              onChange={handleSelectChange}
-            >
-              <option value="fiction">Ficción</option>
-              <option value="non-fiction">No Ficción</option>
-              <option value="science">Ciencia</option>
-            </select>
-          </div>
-          
-          <div className="form-group">
-            <label>
-              <input
-                type="checkbox"
-                name="available"
-                checked={formData.available}
-                onChange={handleCheckboxChange}
-              />
-              Disponible
-            </label>
-          </div>
-        */}
+        {/* Cliente */}
+        <div className="form-group">
+          <label htmlFor="client">Cliente *</label>
+          <input
+            type="text"
+            id="client"
+            name="client"
+            value={formData.client}
+            onChange={handleChange}
+            placeholder="Nombre del cliente"
+            required
+          />
+        </div>
+
+        {/* Fecha */}
+        <div className="form-group">
+          <label htmlFor="date">Fecha *</label>
+          <input
+            type="date"
+            id="date"
+            name="date"
+            value={formData.date}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        {/* Estado */}
+        <div className="form-group">
+          <label htmlFor="status">Estado</label>
+          <select
+            id="status"
+            name="status"
+            value={formData.status}
+            onChange={handleSelectChange}
+          >
+            <option value="Pendiente">Pendiente</option>
+            <option value="En progreso">En progreso</option>
+            <option value="Completado">Completado</option>
+          </select>
+        </div>
+
+        {/* Precio */}
+        <div className="form-group">
+          <label htmlFor="price">Precio *</label>
+          <input
+            type="number"
+            id="price"
+            name="price"
+            value={formData.price}
+            onChange={handleChange}
+            min="0"
+            step="0.01"
+            required
+          />
+        </div>
 
         {/* Botones */}
         <div className="form-actions">
-          <button
-            type="submit"
-            className="btn btn-primary">
+          <button type="submit" className="btn btn-primary">
             {editingItem ? 'Actualizar' : 'Agregar'}
           </button>
 

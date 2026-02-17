@@ -2,29 +2,25 @@
  * COMPONENTE: Header
  *
  * Muestra el título y descripción de la aplicación.
- * Adapta el contenido a tu dominio específico.
+                *  Plataforma de servicios de limpieza *
  */
-
+/**
+ * COMPONENTE: Header
+ *
+ * Muestra el título y descripción de la aplicación.
+ * Plataforma de servicios de limpieza
+ */
 const Header: React.FC = () => {
   return (
     <header className="header">
-      {/* TODO: Cambiar el título según tu dominio */}
-      {/* Ejemplos:
-        - Biblioteca: "📖 Sistema de Gestión de Biblioteca"
-        - Farmacia: "💊 Sistema de Gestión de Farmacia"
-        - Gimnasio: "🏋️ Sistema de Gestión de Gimnasio"
-      */}
-      <h1>🎯 Sistema de Gestión</h1>
+      <h1> Plataforma de Servicios de Limpieza</h1>
 
-      {/* TODO: Cambiar la descripción según tu dominio */}
-      {/* Ejemplos:
-        - Biblioteca: "Gestiona libros, autores y préstamos"
-        - Farmacia: "Gestiona medicamentos, inventario y ventas"
-        - Gimnasio: "Gestiona miembros, planes y asistencias"
-      */}
-      <p>Gestiona elementos de tu dominio con React + TypeScript</p>
+      <p>
+        Gestiona clientes, empleados, servicios, reservas y estados de limpieza
+      </p>
     </header>
   );
 };
 
 export default Header;
+

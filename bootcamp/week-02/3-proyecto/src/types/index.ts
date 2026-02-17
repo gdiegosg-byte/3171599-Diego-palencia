@@ -18,13 +18,18 @@
 // Ejemplo para referencia (ELIMINAR y reemplazar con tu dominio):
 export interface Item {
   id: number;
-  name: string;
+  name: string;        // Nombre del servicio
+  client: string;      // Nombre del cliente
+  date: string;        // Fecha del servicio
+  status: string;
+  price: number;       // Precio del servicio
+}
   // TODO: Agregar propiedades específicas de tu dominio
   // Ejemplos:
   // - Para Biblioteca: author: string; isbn: string; available: boolean;
   // - Para Farmacia: price: number; stock: number; requiresPrescription: boolean;
   // - Para Gimnasio: email: string; plan: 'básico' | 'premium' | 'vip'; active: boolean;
-}
+
 
 // TODO: Si necesitas tipos adicionales, defínelos aquí
 // Ejemplos:

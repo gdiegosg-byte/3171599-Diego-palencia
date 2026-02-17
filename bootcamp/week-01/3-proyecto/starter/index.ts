@@ -18,7 +18,7 @@ console.log('PROYECTO SEMANAL: MODELADO DE ENTIDADES\n');
 //   ...
 // }
 
-export interface CleaningService {
+interface CleaningService {
   id: string; 
   type: CleaningServiceType; 
   date: Date; 
@@ -32,7 +32,7 @@ export interface CleaningService {
 // Qué: Representa a la persona o empresa que contrata el servicio
 // Para: Asociar servicios a quien los solicita
 // Impacto: Permite historial de servicios y facturación
-export interface Client {
+ interface Client {
   id: string; 
   name: string; 
   email: string; 
