@@ -1,136 +1,122 @@
-import React from 'react';
-import { ItemList } from './ItemList';
-import { StatsCard } from './StatsCard';
-import { RealTimeIndicator } from './RealTimeIndicator';
+// ============================================================
+// COMPONENTE: Dashboard - Plataforma de Limpieza
+// Componente principal que orquesta todos los demás
+// ============================================================
 
-// ============================================
-// COMPONENTE: Dashboard (Principal)
-// Contenedor principal que integra todos los componentes
-// ============================================
-
-// NOTA PARA EL APRENDIZ:
-// Este componente debe:
-// 1. Renderizar los 3 componentes principales
-// 2. Crear un layout responsivo
-// 3. Personalizar título según tu dominio
-// 4. (Opcional) Agregar navegación o controles globales
+import React from "react";
+import { ItemList } from "./ItemList";
+import { StatsCard } from "./StatsCard";
+import { RealTimeIndicator } from "./RealTimeIndicator";
 
 export const Dashboard: React.FC = () => {
-  // TODO: (Opcional) Agregar estado global si necesitas
-  // Por ejemplo: tema, configuración, filtros globales
-  // const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const today = new Date().toLocaleDateString("es-CO", {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 
   return (
-    <div className="dashboard">
-      {/* TODO: Header personalizado según tu dominio */}
-      <header className="dashboard-header">
-        <h1>Dashboard</h1>
-        {/* TODO: Cambiar título según tu dominio */}
-        {/* Ejemplos:
-          - "Dashboard Biblioteca"
-          - "Panel de Control - Farmacia"
-          - "Dashboard Gimnasio"
-          - "Panel de Gestión - Restaurante"
-        */}
-
-        {/* TODO: (Opcional) Agregar controles globales */}
-        {/* <button onClick={() => window.location.reload()}>
-          🔄 Refrescar
-        </button> */}
+    <div style={styles.page}>
+      {/* ── Header ─────────────────────────────────────────── */}
+      <header style={styles.header}>
+        <div style={styles.headerLeft}>
+          <h1 style={styles.logo}>🧹 CleanPro</h1>
+          <span style={styles.subtitle}>Plataforma de Gestión de Limpieza</span>
+        </div>
+        <div style={styles.headerRight}>
+          <span style={styles.date}>{today}</span>
+        </div>
       </header>
 
-      {/* TODO: Layout principal con componentes */}
-      <main className="dashboard-main">
-        {/* Sección de estadísticas */}
-        <section className="dashboard-section">
-          {/* TODO: Renderizar StatsCard */}
-          {/* <StatsCard /> */}
-        </section>
+      {/* ── Layout principal ───────────────────────────────── */}
+      <main style={styles.main}>
+        {/* Fila superior: Stats + RealTime */}
+        <div style={styles.topRow}>
+          <div style={styles.statsWrapper}>
+            <StatsCard />
+          </div>
+          <div style={styles.realTimeWrapper}>
+            <RealTimeIndicator />
+          </div>
+        </div>
 
-        {/* Sección de datos en tiempo real */}
-        <section className="dashboard-section">
-          {/* TODO: Renderizar RealTimeIndicator */}
-          {/* <RealTimeIndicator /> */}
-        </section>
-
-        {/* Sección de lista principal */}
-        <section className="dashboard-section dashboard-list">
-          {/* TODO: Renderizar ItemList */}
-          {/* <ItemList /> */}
-        </section>
+        {/* Fila inferior: Lista de servicios */}
+        <div style={styles.listWrapper}>
+          <ItemList />
+        </div>
       </main>
 
-      {/* TODO: (Opcional) Footer */}
-      {/* <footer className="dashboard-footer">
-        <p>Dashboard Week 03 - {new Date().getFullYear()}</p>
-      </footer> */}
+      {/* ── Footer ─────────────────────────────────────────── */}
+      <footer style={styles.footer}>
+        <span>© 2026 CleanPro · Dashboard v1.0 · React + useEffect</span>
+      </footer>
+
+      {/* ── Keyframes via style tag ────────────────────────── */}
+      <style>{`
+        @keyframes spin {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        @keyframes pulse {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.4; }
+        }
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+      `}</style>
     </div>
   );
 };
 
-// ============================================
-// ESTILOS SUGERIDOS
-// ============================================
-
-// .dashboard {
-//   min-height: 100vh;
-//   background: #f0f2f5;
-// }
-//
-// .dashboard-header {
-//   background: white;
-//   padding: 20px 40px;
-//   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-// }
-//
-// .dashboard-header h1 {
-//   margin: 0;
-//   color: #2c3e50;
-// }
-//
-// .dashboard-main {
-//   padding: 24px;
-//   display: grid;
-//   grid-template-columns: repeat(12, 1fr);
-//   gap: 24px;
-//   max-width: 1400px;
-//   margin: 0 auto;
-// }
-//
-// .dashboard-section {
-//   background: white;
-//   border-radius: 8px;
-//   padding: 20px;
-// }
-//
-// /* Layout responsivo */
-// @media (min-width: 1024px) {
-//   .dashboard-section:nth-child(1) {
-//     grid-column: 1 / 9; /* StatsCard: 8 columnas */
-//   }
-//
-//   .dashboard-section:nth-child(2) {
-//     grid-column: 9 / 13; /* RealTimeIndicator: 4 columnas */
-//   }
-//
-//   .dashboard-section.dashboard-list {
-//     grid-column: 1 / 13; /* ItemList: 12 columnas (ancho completo) */
-//   }
-// }
-//
-// @media (max-width: 1023px) {
-//   .dashboard-section {
-//     grid-column: 1 / 13; /* Mobile: todas a ancho completo */
-//   }
-// }
-//
-// .dashboard-footer {
-//   background: #2c3e50;
-//   color: white;
-//   text-align: center;
-//   padding: 20px;
-//   margin-top: 40px;
-// }
+// ── Estilos ────────────────────────────────────────────────
+const styles: Record<string, React.CSSProperties> = {
+  page: {
+    minHeight: "100vh",
+    backgroundColor: "#f0f4f8",
+    display: "flex",
+    flexDirection: "column",
+  },
+  header: {
+    backgroundColor: "#ffffff",
+    padding: "16px 32px",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    boxShadow: "0 1px 4px rgba(0,0,0,0.08)",
+    position: "sticky",
+    top: 0,
+    zIndex: 10,
+  },
+  headerLeft: { display: "flex", alignItems: "center", gap: "12px" },
+  logo: { margin: 0, fontSize: "22px", color: "#0284c7" },
+  subtitle: { fontSize: "14px", color: "#94a3b8" },
+  headerRight: {},
+  date: { fontSize: "13px", color: "#64748b", textTransform: "capitalize" },
+  main: {
+    flex: 1,
+    padding: "24px 32px",
+    display: "flex",
+    flexDirection: "column",
+    gap: "20px",
+    maxWidth: "1400px",
+    width: "100%",
+    margin: "0 auto",
+  },
+  topRow: {
+    display: "grid",
+    gridTemplateColumns: "1fr 360px",
+    gap: "20px",
+    alignItems: "start",
+  },
+  statsWrapper: {},
+  realTimeWrapper: {},
+  listWrapper: {},
+  footer: {
+    textAlign: "center",
+    padding: "16px",
+    fontSize: "12px",
+    color: "#94a3b8",
+    borderTop: "1px solid #e2e8f0",
+  },
+};
