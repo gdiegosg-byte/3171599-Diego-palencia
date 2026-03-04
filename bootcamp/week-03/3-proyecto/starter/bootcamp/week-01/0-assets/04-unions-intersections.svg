@@ -1,0 +1,118 @@
+<svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo -->
+  <rect width="1000" height="500" fill="#0a0e27"/>
+  
+  <!-- Título -->
+  <text x="500" y="35" font-size="26" font-weight="bold" text-anchor="middle" fill="#e0e0e0" font-family="Inter, sans-serif">
+    Uniones (|) e Intersecciones (&amp;)
+  </text>
+  
+  <!-- Separador -->
+  <line x1="50" y1="55" x2="950" y2="55" stroke="#3178c6" stroke-width="2"/>
+  
+  <!-- Sección Uniones -->
+  <g>
+    <text x="225" y="100" font-size="18" font-weight="bold" text-anchor="middle" fill="#61dafb" font-family="Inter, sans-serif">
+      Uniones: A | B (A O B)
+    </text>
+    
+    <!-- Caja 1 -->
+    <rect x="70" y="130" width="130" height="100" fill="#3178c6" stroke="#2d66a8" stroke-width="2" rx="8"/>
+    <text x="135" y="160" font-size="12" font-weight="bold" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif">
+      Status
+    </text>
+    <rect x="85" y="175" width="100" height="40" fill="#1e3a5f" rx="4"/>
+    <text x="95" y="190" font-size="10" fill="#61dafb" font-family="monospace">
+      'draft'
+    </text>
+    <text x="95" y="205" font-size="10" fill="#61dafb" font-family="monospace">
+      'published'
+    </text>
+    
+    <!-- Signo unión -->
+    <circle cx="225" cy="180" r="20" fill="none" stroke="#61dafb" stroke-width="2"/>
+    <text x="225" y="188" font-size="20" font-weight="bold" text-anchor="middle" fill="#61dafb" font-family="Inter, sans-serif">
+      |
+    </text>
+    
+    <!-- Caja 2 -->
+    <rect x="270" y="130" width="130" height="100" fill="#3178c6" stroke="#2d66a8" stroke-width="2" rx="8"/>
+    <text x="335" y="160" font-size="12" font-weight="bold" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif">
+      Más opciones
+    </text>
+    <rect x="285" y="175" width="100" height="40" fill="#1e3a5f" rx="4"/>
+    <text x="295" y="190" font-size="10" fill="#61dafb" font-family="monospace">
+      'archived'
+    </text>
+    <text x="295" y="205" font-size="10" fill="#61dafb" font-family="monospace">
+      'deleted'
+    </text>
+  </g>
+  
+  <!-- Sección Intersecciones -->
+  <g>
+    <text x="750" y="100" font-size="18" font-weight="bold" text-anchor="middle" fill="#61dafb" font-family="Inter, sans-serif">
+      Intersecciones: A &amp; B
+    </text>
+    
+    <!-- Caja 1 -->
+    <rect x="620" y="130" width="120" height="100" fill="#3178c6" stroke="#2d66a8" stroke-width="2" rx="8"/>
+    <text x="680" y="160" font-size="11" font-weight="bold" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif">
+      Post
+    </text>
+    <rect x="630" y="175" width="100" height="40" fill="#1e3a5f" rx="4"/>
+    <text x="640" y="190" font-size="9" fill="#61dafb" font-family="monospace">
+      id, title
+    </text>
+    <text x="640" y="205" font-size="9" fill="#61dafb" font-family="monospace">
+      status
+    </text>
+    
+    <!-- Signo intersección -->
+    <circle cx="800" cy="180" r="20" fill="none" stroke="#61dafb" stroke-width="2"/>
+    <text x="800" y="188" font-size="20" font-weight="bold" text-anchor="middle" fill="#61dafb" font-family="Inter, sans-serif">
+      &amp;
+    </text>
+    
+    <!-- Caja 2 -->
+    <rect x="850" y="130" width="120" height="100" fill="#3178c6" stroke="#2d66a8" stroke-width="2" rx="8"/>
+    <text x="910" y="160" font-size="11" font-weight="bold" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif">
+      Timestamps
+    </text>
+    <rect x="860" y="175" width="100" height="40" fill="#1e3a5f" rx="4"/>
+    <text x="870" y="190" font-size="9" fill="#61dafb" font-family="monospace">
+      createdAt
+    </text>
+    <text x="870" y="205" font-size="9" fill="#61dafb" font-family="monospace">
+      updatedAt
+    </text>
+  </g>
+  
+  <!-- Explicaciones abajo -->
+  <rect x="50" y="280" width="900" height="190" fill="#1a2847" stroke="#3178c6" stroke-width="1" rx="4"/>
+  
+  <text x="70" y="305" font-size="13" font-weight="bold" fill="#61dafb" font-family="Inter, sans-serif">
+    Unión (|) - "Puede ser uno u otro"
+  </text>
+  <text x="70" y="325" font-size="11" fill="#e0e0e0" font-family="Inter, sans-serif">
+    type Status = 'draft' | 'published' | 'archived'  →  Status puede ser solo UNO de estos 3 valores
+  </text>
+  <text x="70" y="345" font-size="11" fill="#e0e0e0" font-family="Inter, sans-serif">
+    Uso: Limitar a valores específicos, crear discriminated unions, hacer código más seguro
+  </text>
+  
+  <line x1="70" y1="360" x2="920" y2="360" stroke="#3178c6" stroke-width="1" stroke-dasharray="5,5"/>
+  
+  <text x="70" y="380" font-size="13" font-weight="bold" fill="#61dafb" font-family="Inter, sans-serif">
+    Intersección (&amp;) - "Tiene TODAS estas propiedades"
+  </text>
+  <text x="70" y="400" font-size="11" fill="#e0e0e0" font-family="Inter, sans-serif">
+    type Article = Post &amp; Timestamps  →  Article tiene todas las props de Post MÁS todas las de Timestamps
+  </text>
+  <text x="70" y="420" font-size="11" fill="#e0e0e0" font-family="Inter, sans-serif">
+    Uso: Combinar tipos, extender tipos sin duplicar código, composición de tipos
+  </text>
+  <text x="70" y="445" font-size="11" fill="#a0a0a0" font-family="Inter, sans-serif" font-style="italic">
+    💡 Las intersecciones son frecuentes en React cuando necesitas combinar props de componentes
+  </text>
+</svg>

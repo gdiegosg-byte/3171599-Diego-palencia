@@ -1,0 +1,131 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo -->
+  <rect width="800" height="500" fill="#0a0e27"/>
+  
+  <!-- Título -->
+  <text x="400" y="35" font-size="24" font-weight="bold" text-anchor="middle" fill="#e0e0e0" font-family="Inter, sans-serif">
+    Tipos Primitivos de TypeScript
+  </text>
+  
+  <!-- Fila 1: string -->
+  <rect x="40" y="70" width="160" height="110" fill="#3178c6" stroke="#2d66a8" stroke-width="2" rx="8"/>
+  <text x="120" y="100" font-size="14" font-weight="bold" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif">
+    string
+  </text>
+  <rect x="50" y="115" width="140" height="50" fill="#1e3a5f" rx="4"/>
+  <text x="60" y="135" font-size="11" fill="#61dafb" font-family="monospace" font-weight="bold">
+    "React"
+  </text>
+  <text x="60" y="152" font-size="11" fill="#61dafb" font-family="monospace">
+    'TypeScript'
+  </text>
+  
+  <!-- Fila 1: number -->
+  <rect x="240" y="70" width="160" height="110" fill="#3178c6" stroke="#2d66a8" stroke-width="2" rx="8"/>
+  <text x="320" y="100" font-size="14" font-weight="bold" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif">
+    number
+  </text>
+  <rect x="250" y="115" width="140" height="50" fill="#1e3a5f" rx="4"/>
+  <text x="260" y="135" font-size="11" fill="#61dafb" font-family="monospace" font-weight="bold">
+    42
+  </text>
+  <text x="260" y="152" font-size="11" fill="#61dafb" font-family="monospace">
+    3.14 (float)
+  </text>
+  
+  <!-- Fila 1: boolean -->
+  <rect x="440" y="70" width="160" height="110" fill="#3178c6" stroke="#2d66a8" stroke-width="2" rx="8"/>
+  <text x="520" y="100" font-size="14" font-weight="bold" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif">
+    boolean
+  </text>
+  <rect x="450" y="115" width="140" height="50" fill="#1e3a5f" rx="4"/>
+  <text x="460" y="135" font-size="11" fill="#61dafb" font-family="monospace" font-weight="bold">
+    true
+  </text>
+  <text x="460" y="152" font-size="11" fill="#61dafb" font-family="monospace">
+    false
+  </text>
+  
+  <!-- Fila 1: any (avoid) -->
+  <rect x="640" y="70" width="120" height="110" fill="#8b0000" stroke="#5a0000" stroke-width="2" rx="8" opacity="0.7"/>
+  <text x="700" y="100" font-size="12" font-weight="bold" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif">
+    any ❌
+  </text>
+  <rect x="650" y="115" width="100" height="50" fill="#3d0000" rx="4"/>
+  <text x="660" y="140" font-size="10" fill="#ff6b6b" font-family="monospace">
+    evitar
+  </text>
+  <text x="660" y="155" font-size="9" fill="#ff6b6b" font-family="monospace">
+    sin verificación
+  </text>
+  
+  <!-- Fila 2: array -->
+  <rect x="40" y="230" width="160" height="110" fill="#3178c6" stroke="#2d66a8" stroke-width="2" rx="8"/>
+  <text x="120" y="260" font-size="14" font-weight="bold" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif">
+    array
+  </text>
+  <rect x="50" y="275" width="140" height="50" fill="#1e3a5f" rx="4"/>
+  <text x="60" y="295" font-size="11" fill="#61dafb" font-family="monospace" font-weight="bold">
+    number[]
+  </text>
+  <text x="60" y="312" font-size="11" fill="#61dafb" font-family="monospace">
+    Array&lt;string&gt;
+  </text>
+  
+  <!-- Fila 2: null/undefined -->
+  <rect x="240" y="230" width="160" height="110" fill="#3178c6" stroke="#2d66a8" stroke-width="2" rx="8"/>
+  <text x="320" y="250" font-size="13" font-weight="bold" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif">
+    null |
+  </text>
+  <text x="320" y="270" font-size="13" font-weight="bold" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif">
+    undefined
+  </text>
+  <rect x="250" y="275" width="140" height="50" fill="#1e3a5f" rx="4"/>
+  <text x="260" y="295" font-size="11" fill="#61dafb" font-family="monospace" font-weight="bold">
+    null
+  </text>
+  <text x="260" y="312" font-size="11" fill="#61dafb" font-family="monospace">
+    undefined
+  </text>
+  
+  <!-- Fila 2: union -->
+  <rect x="440" y="230" width="160" height="110" fill="#3178c6" stroke="#2d66a8" stroke-width="2" rx="8"/>
+  <text x="520" y="260" font-size="13" font-weight="bold" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif">
+    union types
+  </text>
+  <rect x="450" y="275" width="140" height="50" fill="#1e3a5f" rx="4"/>
+  <text x="460" y="295" font-size="11" fill="#61dafb" font-family="monospace" font-weight="bold">
+    string | number
+  </text>
+  <text x="460" y="312" font-size="9" fill="#61dafb" font-family="monospace">
+    (múltiples tipos)
+  </text>
+  
+  <!-- Fila 2: literal -->
+  <rect x="640" y="230" width="120" height="110" fill="#3178c6" stroke="#2d66a8" stroke-width="2" rx="8"/>
+  <text x="700" y="260" font-size="13" font-weight="bold" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif">
+    literal types
+  </text>
+  <rect x="650" y="275" width="100" height="50" fill="#1e3a5f" rx="4"/>
+  <text x="660" y="297" font-size="10" fill="#61dafb" font-family="monospace">
+    'admin'
+  </text>
+  <text x="660" y="312" font-size="9" fill="#61dafb" font-family="monospace">
+    (valor exacto)
+  </text>
+  
+  <!-- Información importante -->
+  <rect x="40" y="380" width="720" height="100" fill="#1a2847" stroke="#3178c6" stroke-width="1" rx="4"/>
+  <text x="55" y="405" font-size="12" font-weight="bold" fill="#61dafb" font-family="Inter, sans-serif">
+    Inferencia de Tipos:
+  </text>
+  <text x="55" y="425" font-size="11" fill="#e0e0e0" font-family="Inter, sans-serif">
+    TypeScript deduce automáticamente el tipo basado en el valor asignado. Ejemplo: const name = "Ana" → TypeScript infiere que es string
+  </text>
+  <text x="55" y="450" font-size="11" fill="#e0e0e0" font-family="Inter, sans-serif">
+    Solo usa anotaciones explícitas cuando agreguen claridad: const count: number = 42
+  </text>
+  <text x="55" y="470" font-size="11" fill="#ff6b6b" font-family="Inter, sans-serif" font-weight="bold">
+    ⚠️ Evita 'any': Desactiva la verificación de tipos y elimina los beneficios de TypeScript
+  </text>
+</svg>

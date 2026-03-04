@@ -1,0 +1,118 @@
+<svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo -->
+  <rect width="900" height="600" fill="#0a0e27"/>
+  
+  <!-- Título -->
+  <text x="450" y="35" font-size="26" font-weight="bold" text-anchor="middle" fill="#e0e0e0" font-family="Inter, sans-serif">
+    Interface vs Type
+  </text>
+  
+  <!-- Separador visual -->
+  <line x1="50" y1="60" x2="850" y2="60" stroke="#3178c6" stroke-width="2"/>
+  
+  <!-- Lado izquierdo: Interface -->
+  <g>
+    <!-- Caja title -->
+    <rect x="50" y="90" width="350" height="50" fill="#3178c6" stroke="#2d66a8" stroke-width="2" rx="8"/>
+    <text x="225" y="125" font-size="18" font-weight="bold" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif">
+      interface
+    </text>
+    
+    <!-- Características Interface -->
+    <rect x="50" y="160" width="350" height="190" fill="#1a2847" stroke="#3178c6" stroke-width="2" rx="8"/>
+    
+    <!-- Característica 1 -->
+    <circle cx="75" cy="190" r="6" fill="#61dafb"/>
+    <text x="95" y="195" font-size="12" fill="#e0e0e0" font-family="Inter, sans-serif" font-weight="bold">
+      Objetos y props
+    </text>
+    
+    <!-- Característica 2 -->
+    <circle cx="75" cy="220" r="6" fill="#61dafb"/>
+    <text x="95" y="225" font-size="12" fill="#e0e0e0" font-family="Inter, sans-serif" font-weight="bold">
+      Extensible (extends)
+    </text>
+    
+    <!-- Característica 3 -->
+    <circle cx="75" cy="250" r="6" fill="#61dafb"/>
+    <text x="95" y="255" font-size="12" fill="#e0e0e0" font-family="Inter, sans-serif" font-weight="bold">
+      Props opcionales
+    </text>
+    
+    <!-- Ejemplo código -->
+    <rect x="50" y="380" width="350" height="180" fill="#0f1529" stroke="#2d66a8" stroke-width="1" rx="4"/>
+    <text x="65" y="400" font-size="10" fill="#61dafb" font-family="monospace" font-weight="bold">
+      interface User {
+    </text>
+    <text x="75" y="418" font-size="10" fill="#e0e0e0" font-family="monospace">
+      id: number;
+    </text>
+    <text x="75" y="436" font-size="10" fill="#e0e0e0" font-family="monospace">
+      name: string;
+    </text>
+    <text x="75" y="454" font-size="10" fill="#e0e0e0" font-family="monospace">
+      email: string;
+    </text>
+    <text x="75" y="472" font-size="10" fill="#e0e0e0" font-family="monospace">
+      role?: 'admin' | 'user';
+    </text>
+    <text x="65" y="490" font-size="10" fill="#61dafb" font-family="monospace" font-weight="bold">
+      }
+    </text>
+    <text x="65" y="540" font-size="10" fill="#a0a0a0" font-family="Inter, sans-serif" font-style="italic">
+      ✅ Recomendado para props
+    </text>
+  </g>
+  
+  <!-- Lado derecho: Type -->
+  <g>
+    <!-- Caja title -->
+    <rect x="500" y="90" width="350" height="50" fill="#3178c6" stroke="#2d66a8" stroke-width="2" rx="8"/>
+    <text x="675" y="125" font-size="18" font-weight="bold" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif">
+      type
+    </text>
+    
+    <!-- Características Type -->
+    <rect x="500" y="160" width="350" height="190" fill="#1a2847" stroke="#3178c6" stroke-width="2" rx="8"/>
+    
+    <!-- Característica 1 -->
+    <circle cx="525" cy="190" r="6" fill="#61dafb"/>
+    <text x="545" y="195" font-size="12" fill="#e0e0e0" font-family="Inter, sans-serif" font-weight="bold">
+      Uniones (|)
+    </text>
+    
+    <!-- Característica 2 -->
+    <circle cx="525" cy="220" r="6" fill="#61dafb"/>
+    <text x="545" y="225" font-size="12" fill="#e0e0e0" font-family="Inter, sans-serif" font-weight="bold">
+      Intersecciones (&amp;)
+    </text>
+    
+    <!-- Característica 3 -->
+    <circle cx="525" cy="250" r="6" fill="#61dafb"/>
+    <text x="545" y="255" font-size="12" fill="#e0e0e0" font-family="Inter, sans-serif" font-weight="bold">
+      Alias de tipos
+    </text>
+    
+    <!-- Ejemplo código -->
+    <rect x="500" y="380" width="350" height="180" fill="#0f1529" stroke="#2d66a8" stroke-width="1" rx="4"/>
+    <text x="515" y="400" font-size="10" fill="#61dafb" font-family="monospace" font-weight="bold">
+      type Role =
+    </text>
+    <text x="525" y="418" font-size="10" fill="#61dafb" font-family="monospace" font-weight="bold">
+        'admin' | 'user';
+    </text>
+    <text x="515" y="440" font-size="10" fill="#e0e0e0" font-family="monospace"/>
+    <text x="515" y="458" font-size="10" fill="#61dafb" font-family="monospace" font-weight="bold">
+      type User = {
+    </text>
+    <text x="525" y="476" font-size="10" fill="#e0e0e0" font-family="monospace">
+      id: number; role: Role;
+    </text>
+    <text x="515" y="494" font-size="10" fill="#61dafb" font-family="monospace" font-weight="bold">
+      };
+    </text>
+    <text x="515" y="540" font-size="10" fill="#a0a0a0" font-family="Inter, sans-serif" font-style="italic">
+      ✅ Usa para uniones
+    </text>
+  </g>
+</svg>
